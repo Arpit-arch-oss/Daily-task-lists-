@@ -1,0 +1,184 @@
+/* body {
+  font-family: Arial;
+  background-color: rgb(166, 170, 149);
+  align-items: center;
+}
+
+#main-heading {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 180px 120px 80px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+
+}
+
+#todo-input, #todo-date {
+  font-size: 15px;
+  padding: 10px 5px;
+  align-items: center;
+}
+.btn-delete {
+  background-color: brown;
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.btn-todo {
+  background-color: rgb(19, 157, 70);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0px;
+  cursor: pointer;
+} */
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #5eaf94;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Heading */
+#main-heading {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Common Grid Setup */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr 1fr;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+}
+
+/* Input Fields Box (Form Area) */
+div.grid-container:first-of-type {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+/* Inputs styling */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #3498db;
+}
+
+/* Buttons Base */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Add Button */
+.btn-todo {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-todo:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+}
+
+/* Todo Output Container */
+.todo-container {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Text and Date elements inside the list */
+.todo-container span {
+  font-size: 1.05rem;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7;
+  word-break: break-word;
+}
+
+/* Delete Button */
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Remove bottom border on the last grid row elements */
+.todo-container span:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  div.grid-container:first-of-type {
+    padding: 15px;
+  }
+  
+  .todo-container span {
+    padding: 6px 0;
+    border-bottom: none;
+  }
+  
+  .todo-container span:nth-child(3n) {
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+  }
+}
